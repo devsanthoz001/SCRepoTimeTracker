@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TimeTrackerUI.Models
 {
-    [Table("TimeEntry",Schema ="tt")]
-    public class TimeEntryTable
+    [Table("TimeTracker",Schema ="tt")]
+    public class TimeTracker
     {
         [Required]
         public int Id { get; set; }
