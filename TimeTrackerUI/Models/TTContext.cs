@@ -9,7 +9,7 @@ namespace TimeTrackerUI.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=MyDatabaseFile.txt");
+            optionsBuilder.UseSqlite("Data Source=" + "./TimeTracker.db");
         }
 
     }
