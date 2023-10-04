@@ -6,7 +6,7 @@ namespace TimeTrackerUI.Models
 
     public class TimeTracker
     {
-       
+
 
         [Required]
         public int Id { get; set; }
@@ -28,9 +28,10 @@ namespace TimeTrackerUI.Models
 
         public override string ToString()
         {
-            return $"{Id}|{EntryDate}|{PersonName}|{EntryTime}|{ExitTime}|{(ExitTime - EntryTime).TotalHours}";
-        } 
-        public TimeTracker(){
+            return $"{Id}|{EntryDate}|{PersonName}|{EntryTime}|{ExitTime}|{(ExitTime - EntryTime).Ticks}";
+        }
+        public TimeTracker()
+        {
 
         }
         public TimeTracker(string lineRead)
@@ -41,7 +42,8 @@ namespace TimeTrackerUI.Models
             PersonName = lineReadArray[2];
             EntryTime = Convert.ToDateTime(lineReadArray[3]);
             ExitTime = Convert.ToDateTime(lineReadArray[4]);
-           // TotalHours = Convert.ToDateTime(lineReadArray[5]);
+            
+            TotalHours = new TimeSpan(Convert.ToInt64(lineReadArray[5])); //ExitTime - EntryTime;
         }
     }
 }
